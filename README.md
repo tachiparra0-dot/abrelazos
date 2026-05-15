@@ -2,6 +2,10 @@
 
 Sitio estático de la organización Abrelazos, preparado para publicación en GitHub Pages.
 
+[![Deploy to GitHub Pages](https://img.shields.io/badge/Deploy-GitHub%20Pages-blue?logo=github)](https://github.com/tachiparra0-dot/abrelazos/settings/pages)
+
+Sitio público esperado: `https://tachiparra0-dot.github.io/abrelazos/`
+
 ## Qué incluye este proyecto
 
 - `index.html` con todo el diseño y funcionalidad embebidos.
