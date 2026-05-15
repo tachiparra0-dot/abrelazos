@@ -11,7 +11,6 @@
     --bg-light: #fdfbf7; /* Crema suave */
     --text-muted: #555;
     --white: #ffffff;
-    --nav-height: 80px;
 }
 
 * {
@@ -25,8 +24,7 @@ body {
     background-color: var(--bg-light);
     color: var(--primary);
     scroll-behavior: smooth;
-    overflow-x: hidden; /* evita scroll horizontal en móviles */
-    padding-top: var(--nav-height); /* deja espacio para navbar fija */
+    font-size: 14px;
 }
 
 h1, h2, .logo {
@@ -38,13 +36,13 @@ h1, h2, .logo {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 80px;
+    height: 100px;
     padding: 0 8%;
     position: fixed;
     width: 100%;
     z-index: 1000;
-    transition: 0.25s ease;
-    background: rgba(0,0,0,0.6);
+    transition: 0.4s;
+    background: #000000;
 }
 
 .navbar.scrolled {
@@ -54,18 +52,14 @@ h1, h2, .logo {
 }
 
 .logo {
-    font-size: 1.2rem;
+    font-size: 1.8rem;
     font-weight: 700;
     letter-spacing: 2px;
-    width: auto;
-    height: 56px;
+    width: 180px;
+    height: 180px;
     background-size: contain;
     background-repeat: no-repeat;
-    background-position: left center;
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    color: var(--white);
+    background-position: center;
 }
 
 .logo span { display: none; }
@@ -85,7 +79,6 @@ h1, h2, .logo {
     text-transform: uppercase;
     letter-spacing: 1px;
     transition: 0.3s;
-    padding: 10px 14px; /* touch target */
 }
 
 .cta-nav {
@@ -109,23 +102,13 @@ h1, h2, .logo {
     transition: 0.3s;
 }
 
-.hamburger.active span:nth-child(1) {
-    transform: translateY(6px) rotate(45deg);
-}
-.hamburger.active span:nth-child(2) {
-    opacity: 0;
-}
-.hamburger.active span:nth-child(3) {
-    transform: translateY(-6px) rotate(-45deg);
-}
-
 /* Hero */
 .hero {
-    min-height: calc(100vh - var(--nav-height));
+    height: 100vh;
     background: url('https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&q=80') center/cover;
     display: flex;
     align-items: center;
-    padding: 1.2rem 8% 3rem 8%;
+    padding: 0 8%;
     position: relative;
     color: var(--white);
 }
@@ -139,12 +122,10 @@ h1, h2, .logo {
 .hero-content {
     position: relative;
     max-width: 650px;
-    max-width: 90%;
     z-index: 2;
     opacity: 1;
     transform: translateX(0);
     transition: all 1.2s ease;
-    padding-right: 1rem;
 }
 
 .label {
@@ -156,9 +137,9 @@ h1, h2, .logo {
     display: block;
 }
 
-h1 { font-size: clamp(2.2rem, 6vw, 4.5rem); line-height: 1.08; margin-bottom: 1.2rem; word-break: break-word; }
+h1 { font-size: 4.5rem; line-height: 1.1; margin-bottom: 1.5rem; }
 
-p { font-size: clamp(1rem, 2.6vw, 1.3rem); opacity: 0.95; margin-bottom: 1.6rem; font-weight: 300; }
+p { font-size: 1.3rem; opacity: 0.9; margin-bottom: 2.5rem; font-weight: 300; }
 
 /* Botones */
 .hero-btns {
@@ -591,7 +572,6 @@ h2 {
     .navbar {
         padding: 0 5%;
         height: 70px;
-        --nav-height: 70px;
     }
 
     .logo {
@@ -606,16 +586,16 @@ h2 {
     .nav-menu {
         position: fixed;
         right: 0;
-        top: 70px;
+        top: 80px;
         left: auto;
         transform: translateX(100%);
         flex-direction: column;
-        background-color: rgba(25,25,25,0.96);
-        width: 280px;
+        background-color: var(--primary);
+        width: 260px;
         max-width: 90%;
-        height: calc(100vh - 70px);
+        height: calc(100vh - 80px);
         text-align: center;
-        transition: transform 0.25s ease;
+        transition: transform 0.3s ease;
         padding: 1.5rem 0;
         box-shadow: -4px 0 20px rgba(0, 0, 0, 0.25);
         z-index: 1100;
@@ -633,15 +613,13 @@ h2 {
         font-size: 1rem;
     }
 
-    .logo span { display: inline-block; font-weight:700; color: var(--white); }
-
     .hero {
-        min-height: 60vh;
-        padding: 1rem 5% 2.5rem 5%;
+        height: 90vh;
+        padding: 0 5%;
     }
 
     h1 {
-        font-size: clamp(1.8rem, 7.5vw, 3rem);
+        font-size: 3rem;
     }
 
     p {
@@ -689,9 +667,6 @@ h2 {
         box-shadow: 0 4px 20px rgba(0,0,0,0.1);
     }
 
-    /* Evitar que elementos fijos o anchos causen overflow */
-    html, body { max-width: 100%; overflow-x: hidden; }
-
     .contact-info {
         gap: 1.5rem;
         padding: 0;
@@ -718,12 +693,6 @@ h2 {
         gap: 0.8rem;
     }
 
-    .social-icons {
-        flex-direction: row;
-        justify-content: flex-start;
-        align-items: center;
-    }
-
     .social-link {
         padding: 0.6rem 1.2rem;
         font-size: 1rem;
@@ -737,18 +706,6 @@ h2 {
     .services-grid,
     .values-grid {
         grid-template-columns: 1fr;
-    }
-
-    /* Extra small screens tweaks */
-    @media (max-width: 420px) {
-        .hero { height: 88vh; padding: 0 4%; }
-        h1 { font-size: 2.2rem; }
-        p { font-size: 1rem; }
-        .nav-menu { width: 100%; left: 0; right: 0; padding-top: 1rem; }
-        .nav-menu a { padding: 14px 18px; font-size: 1.05rem; }
-        .logo { height: 48px; }
-        .logo span { display: inline-block; }
-        .service-card { padding: 1.2rem; }
     }
 }
     </style>
@@ -907,7 +864,7 @@ h2 {
                     </div>
                     <div class="contact-item">
                         <h3>Ubicación</h3>
-                        <p>Medellín, Antioquia, Colombia</p>
+                        <p>Cali, Valle del Cauca, Colombia</p>
                     </div>
                     <div class="social-section">
                         <h3>Redes sociales</h3>
@@ -975,22 +932,13 @@ document.addEventListener('DOMContentLoaded', () => {
     const hamburger = document.getElementById('hamburger');
     const navMenu = document.getElementById('nav-menu');
 
-    // Accessibility attributes
-    hamburger.setAttribute('role', 'button');
-    hamburger.setAttribute('aria-label', 'Abrir menú');
-    hamburger.setAttribute('aria-expanded', 'false');
-
     hamburger.addEventListener('click', () => {
-        const isOpen = navMenu.classList.toggle('active');
-        hamburger.classList.toggle('active');
-        hamburger.setAttribute('aria-expanded', String(isOpen));
+        navMenu.classList.toggle('active');
     });
 
     navMenu.querySelectorAll('a').forEach(link => {
         link.addEventListener('click', () => {
             navMenu.classList.remove('active');
-            hamburger.classList.remove('active');
-            hamburger.setAttribute('aria-expanded', 'false');
         });
     });
 
