@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abrelazos | Uniendo culturas, fortaleciendo comunidades</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lato:wght@300;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="logo" style="background-image: url('logo.png')"><span></span></div>
+        <div class="hamburger" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <ul class="nav-menu" id="nav-menu">
+            <li><a href="#inicio">Inicio</a></li>
+            <li><a href="#mision">Nuestra Misión</a></li>
+            <li><a href="#servicios">Servicios</a></li>
+            <li><a href="#" class="cta-nav">Donar Ahora</a></li>
+        </ul>
+    </nav>
+
+    <header class="hero" id="inicio">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <span class="label">Humanidad sin fronteras</span>
+            <h1>Uniendo culturas,<br>fortaleciendo comunidades</h1>
+            <p>Orientación y acompañamiento integral para población migrante, retornados y comunidades de acogida en Colombia</p>
+            <div class="hero-btns">
+                <a href="#servicios" class="btn-solid">Nuestros Servicios</a>
+                <a href="#contacto" class="btn-outline">Saber Más</a>
+            </div>
+        </div>
+    </header>
+
+    <section class="about" id="quienes-somos">
+        <div class="container">
+            <h2>¿Qué es y que hace Abrelazos?</h2>
+            <p>Abrelazos es una organización comprometida con la integración, el bienestar y la dignidad de la población migrante venezolana, refugiada y de acogida. Nuestra misión es promover un entorno acogedor y solidario a través de programas y servicios especializados que fomenten la inclusión social, la igualdad de género, el acceso a recursos vitales y el fortalecimiento de la comunidad.
+        </div>
+    </section>
+
+    <section class="carousel-section" id="servicios">
+        <div class="container">
+            <h2>Nuestra Galería</h2>
+            <div class="carousel" id="carousel">
+                <div class="slide active">
+                    <img src="https://images.unsplash.com/photo-1529068755536-a5ade1d9f1e7?auto=format&fit=crop&w=1200&q=80" alt="Comunidad" />
+                </div>
+                <div class="slide">
+                    <img src="https://images.unsplash.com/photo-1527828805170-1fb461223a0d?auto=format&fit=crop&w=1200&q=80" alt="Ayuda" />
+                </div>
+                <div class="slide">
+                    <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=1200&q=80" alt="Apoyo legal" />
+                </div>
+                <div class="slide">
+                    <img src="https://images.unsplash.com/photo-1461725575494-bf30daa2d7de?auto=format&fit=crop&w=1200&q=80" alt="Educación" />
+                </div>
+                <button class="carousel-btn prev" id="prevBtn">❮</button>
+                <button class="carousel-btn next" id="nextBtn">❯</button>
+                <div class="carousel-dots" id="carouselDots"></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="mission" id="mision">
+        <div class="container">
+            <div class="mission-grid">
+                <div class="text-block">
+                    <h2>Un puente hacia <br>la integración</h2>
+                    <p>Creemos en la migración como una oportunidad de crecimiento mutuo. Trabajamos para garantizar que cada persona que cruza una frontera encuentre una mano tendida.</p>
+                </div>
+                <div class="stats-block">
+                    <div class="stat-item">
+                        <span class="number">+5k</span>
+                        <span class="desc">Vidas Impactadas</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="number">24/7</span>
+                        <span class="desc">Apoyo Legal</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact" id="contacto">
+        <div class="container">
+            <h2>Contáctanos</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <h3>Correo</h3>
+                        <p>abrelazos@gmail.com</p>
+                    </div>
+                    <div class="contact-item">
+                        <h3>Teléfono</h3>
+                        <p><i class="fab fa-whatsapp"></i> +57 313 795 4711</p>
+                    </div>
+                    <div class="social-section">
+                        <h3>Redes sociales</h3>
+                        <div class="social-icons">
+                            <div class="social-link">
+                                <i class="fab fa-facebook-f"></i>
+                                <span>@abrelazos</span>
+                            </div>
+                            <div class="social-link">
+                                <i class="fab fa-tiktok"></i>
+                                <span>@abrelazos</span>
+                            </div>
+                            <div class="social-link">
+                                <i class="fab fa-instagram"></i>
+                                <span>@abrelazos</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <h3>Escríbenos</h3>
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="contactName">Nombre</label>
+                            <input type="text" id="contactName" name="name" placeholder="Tu nombre" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="contactEmail">Correo electrónico</label>
+                            <input type="email" id="contactEmail" name="email" placeholder="Tu correo" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="contactMessage">Mensaje</label>
+                            <textarea id="contactMessage" name="message" rows="5" placeholder="Cuéntanos cómo podemos ayudar" required></textarea>
+                        </div>
+                        <button type="submit" class="btn-solid">Enviar mensaje</button>
+                        <p class="form-message" id="formMessage"></p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <p>© 2026 Abrelazos. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="style.js"></script>
+</body>
+</html>
