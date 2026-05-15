@@ -11,6 +11,7 @@
     --bg-light: #fdfbf7; /* Crema suave */
     --text-muted: #555;
     --white: #ffffff;
+    --nav-height: 80px;
 }
 
 * {
@@ -24,6 +25,8 @@ body {
     background-color: var(--bg-light);
     color: var(--primary);
     scroll-behavior: smooth;
+    overflow-x: hidden; /* evita scroll horizontal en móviles */
+    padding-top: var(--nav-height); /* deja espacio para navbar fija */
 }
 
 h1, h2, .logo {
@@ -118,11 +121,11 @@ h1, h2, .logo {
 
 /* Hero */
 .hero {
-    height: 100vh;
+    min-height: calc(100vh - var(--nav-height));
     background: url('https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&q=80') center/cover;
     display: flex;
     align-items: center;
-    padding: 0 8%;
+    padding: 1.2rem 8% 3rem 8%;
     position: relative;
     color: var(--white);
 }
@@ -136,10 +139,12 @@ h1, h2, .logo {
 .hero-content {
     position: relative;
     max-width: 650px;
+    max-width: 90%;
     z-index: 2;
     opacity: 1;
     transform: translateX(0);
     transition: all 1.2s ease;
+    padding-right: 1rem;
 }
 
 .label {
@@ -151,9 +156,9 @@ h1, h2, .logo {
     display: block;
 }
 
-h1 { font-size: 4.5rem; line-height: 1.1; margin-bottom: 1.5rem; }
+h1 { font-size: clamp(2.2rem, 6vw, 4.5rem); line-height: 1.08; margin-bottom: 1.2rem; word-break: break-word; }
 
-p { font-size: 1.3rem; opacity: 0.9; margin-bottom: 2.5rem; font-weight: 300; }
+p { font-size: clamp(1rem, 2.6vw, 1.3rem); opacity: 0.95; margin-bottom: 1.6rem; font-weight: 300; }
 
 /* Botones */
 .hero-btns {
@@ -586,6 +591,7 @@ h2 {
     .navbar {
         padding: 0 5%;
         height: 70px;
+        --nav-height: 70px;
     }
 
     .logo {
@@ -630,12 +636,12 @@ h2 {
     .logo span { display: inline-block; font-weight:700; color: var(--white); }
 
     .hero {
-        height: 90vh;
-        padding: 0 5%;
+        min-height: 60vh;
+        padding: 1rem 5% 2.5rem 5%;
     }
 
     h1 {
-        font-size: 3rem;
+        font-size: clamp(1.8rem, 7.5vw, 3rem);
     }
 
     p {
@@ -682,6 +688,9 @@ h2 {
         border-radius: 12px;
         box-shadow: 0 4px 20px rgba(0,0,0,0.1);
     }
+
+    /* Evitar que elementos fijos o anchos causen overflow */
+    html, body { max-width: 100%; overflow-x: hidden; }
 
     .contact-info {
         gap: 1.5rem;
