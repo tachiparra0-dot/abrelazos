@@ -1,10 +1,15 @@
-# Abrelazos - Frontend y Backend
+# Abrelazos
 
-Este proyecto incluye:
-- `index.html`, `style.css`, `style.js` para el frontend.
-- `server.js` con un backend Express que sirve los archivos estáticos y expone API REST.
+Sitio estático de la organización Abrelazos, preparado para publicación en GitHub Pages.
 
-## Instrucciones de uso
+## Qué incluye este proyecto
+
+- `index.html` con todo el diseño y funcionalidad embebidos.
+- `server.js` para desarrollo local con Express.
+- Flujo de GitHub Actions para publicar automáticamente en GitHub Pages desde `main`.
+- Script local de monitoreo para auto-commit y push de cambios en `index.html`.
+
+## Uso local
 
 1. Asegúrate de tener Node.js instalado.
 2. Abre una terminal en la carpeta del proyecto.
@@ -15,12 +20,16 @@ Este proyecto incluye:
    ```
 4. Abre `http://localhost:3000` en tu navegador.
 
-## API disponibles
+## Auto-actualización de cambios
 
-- `GET /api/status` — estado del backend.
-- `GET /api/servicios` — lista de servicios.
-- `POST /api/contact` — envía el formulario de contacto.
+Para que cada cambio en `index.html` se comprometa y empuje automáticamente:
 
-## Notas
+```bash
+npm run watch
+```
 
-Los mensajes de contacto se guardan en `data/contacts.json`.
+Esto detectará cambios en el archivo, creará un commit automático y enviará la rama `main` a GitHub.
+
+## Despliegue automático
+
+Cualquier push a la rama `main` activará la acción de GitHub Pages en `.github/workflows/pages.yml` y actualizará el sitio público.
